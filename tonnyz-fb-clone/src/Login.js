@@ -1,9 +1,10 @@
 import React from "react";
 import "./Login.css";
+import { auth, provider } from "./firebase";
 
 function Login() {
   const signIn = () => {
-    //do soe login staff
+    //do some login staff
   };
   return (
     <div className="login">
