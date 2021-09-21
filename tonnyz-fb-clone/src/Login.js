@@ -1,12 +1,21 @@
 import React from "react";
 import "./Login.css";
 import { auth, provider } from "./firebase";
+import { useStateValue } from "./StateProvider";
+import { actionTypes } from "./Reducer";
 
 function Login() {
+  const [state, dispatch] = useStateValue();
   const signIn = () => {
     auth
       .signInWithPopup(provider)
-      .then((result) => console.log(result.user))
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user, // we push the user to the data layer
+        });
+        console.log(result.user);
+      })
       .catch((error) => alert(error.message));
   };
   return (

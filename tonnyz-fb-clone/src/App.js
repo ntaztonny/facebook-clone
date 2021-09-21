@@ -6,9 +6,10 @@ import Login from "./Login";
 import Widget from "./Widget";
 import StoryReel from "./StoryReel";
 import Post from "./Post";
+import { useStateValue } from "./StateProvider";
 
 function App() {
-  const user = null;
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="app">
       {/* {If no user render the login or the rest of the app} */}
