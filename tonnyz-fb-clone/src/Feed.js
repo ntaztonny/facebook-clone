@@ -11,8 +11,8 @@ function Feed() {
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapShot) =>
-        setPosts(snapShot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
+      .onSnapshot((snapshot) =>
+        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
       );
   }, []);
   return (
@@ -20,7 +20,7 @@ function Feed() {
       <StoryReel />
       <MessageSender />
 
-      {/* {posts.map((post) => {
+      {posts.map((post) => {
         <Post
           key={post.id}
           profilePic={post.data.profilePic}
@@ -29,7 +29,7 @@ function Feed() {
           username={post.data.username}
           image={post.data.image}
         />;
-      })} */}
+      })}
 
       <Post
         profilePic="https://images.assetsdelivery.com/compings_v2/puhhha/puhhha1608/puhhha160800218.jpg"
