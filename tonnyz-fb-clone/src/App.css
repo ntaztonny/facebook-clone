@@ -4,4 +4,12 @@
 
 .app__body {
   display: flex;
+  margin-left: 0;
+  margin-right: 0;
+}
+@media screen and (min-width: 1600px) {
+  .app__body {
+    margin-left: 15%;
+    margin-right: 10%;
+  }
 }

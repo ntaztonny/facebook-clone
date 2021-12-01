@@ -1,4 +1,11 @@
 .sidebar {
+  margin-top: 20px;
   padding: 25x 10px;
-  flex: 0.33;
+  flex: 0.2;
+}
+
+@media only screen and (min-width: 1200px) {
+  .sidebar {
+    max-width: 300px;
+  }
 }

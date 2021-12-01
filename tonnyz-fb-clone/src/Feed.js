@@ -7,37 +7,37 @@ import db from "./firebase";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
-
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
-        setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
-      );
+      .onSnapshot((snapshot) => {
+        setPosts(
+          snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))
+        );
+      });
   }, []);
   return (
     <div className="feed">
-      <StoryReel />
+      <StoryReel className="feed__storyreel" />
       <MessageSender />
-
-      {posts.map((post) => {
+      <Post
+        profilePic="https://lh3.googleusercontent.com/a/AATXAJw5a8HyT7N41baNzn0mD9xCHKwXBwWlGOIwDPa9=s96-c"
+        message="Thanks for checking out this facebook-clone! To see realtime feedback, create a post in the *What is on your mind* textbox above, you could also add an image in the image URL box. This clone is powered by react and firebase-cloud firestore database!... Have fun checking it out... Tonny"
+        timestamp={new Date()}
+        username="Tonny Ntambaazi"
+        image=""
+      />
+      {posts.map((post) => (
         <Post
           key={post.id}
           profilePic={post.data.profilePic}
           message={post.data.message}
-          timestamp={post.data.timestamp}
+          timestamp={post.data.timestamp.toDate()}
           username={post.data.username}
           image={post.data.image}
-        />;
-      })}
+        />
+      ))}
 
-      <Post
-        profilePic="https://images.assetsdelivery.com/compings_v2/puhhha/puhhha1608/puhhha160800218.jpg"
-        message="Check out the flight pilot game in action!"
-        timestamp="Posted at this time!"
-        username="Anny"
-        image="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dcd83624702049.56b84ae5b65c7.jpg"
-      />
       {/**Message send componentl */}
     </div>
   );

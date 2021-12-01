@@ -41,21 +41,6 @@ function StoryReel() {
         profilesrc="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2000&q=80"
         title="Tim Jasony"
       />
-      <Story
-        image="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        profilesrc="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-        title="Atozpp"
-      />
-      <Story
-        image="https://mobirise.com/bootstrap-template/profile-template/assets/images/timothy-paul-smith-256424-1200x800.jpg"
-        profilesrc="https://mobirise.com/bootstrap-template/profile-template/assets/images/timothy-paul-smith-256424-1200x800.jpg"
-        title="Sasha"
-      />
-      <Story
-        image="https://images.assetsdelivery.com/compings_v2/puhhha/puhhha1608/puhhha160800218.jpg"
-        profilesrc="https://images.assetsdelivery.com/compings_v2/puhhha/puhhha1608/puhhha160800218.jpg"
-        title="Anny"
-      />
     </div>
   );
 }
