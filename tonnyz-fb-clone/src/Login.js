@@ -14,7 +14,7 @@ function Login() {
           type: actionTypes.SET_USER,
           user: result.user, // we push the user to the data layer
         });
-        console.log(result.user);
+        console.log("user", result.user);
       })
       .catch((error) => alert(error.message));
   };

@@ -20,6 +20,16 @@ function Feed() {
     <div className="feed">
       <StoryReel className="feed__storyreel" />
       <MessageSender />
+      {posts.map((post) => (
+        <Post
+          key={post.id}
+          profilePic={post.data.profilePic}
+          message={post.data.message}
+          timestamp={post.data.timestamp?.toDate()}
+          username={post.data.username}
+          image={post.data.image}
+        />
+      ))}
       <Post
         profilePic="https://lh3.googleusercontent.com/a/AATXAJw5a8HyT7N41baNzn0mD9xCHKwXBwWlGOIwDPa9=s96-c"
         message="Thanks for checking out this facebook-clone! To see realtime feedback, create a post in the *What is on your mind* textbox above, you could also add an image in the image URL box. This clone is powered by react and firebase-cloud firestore database!... Have fun checking it out... Tonny"
@@ -27,17 +37,6 @@ function Feed() {
         username="Tonny Ntambaazi"
         image=""
       />
-      {posts.map((post) => (
-        <Post
-          key={post.id}
-          profilePic={post.data.profilePic}
-          message={post.data.message}
-          timestamp={post.data.timestamp.toDate()}
-          username={post.data.username}
-          image={post.data.image}
-        />
-      ))}
-
       {/**Message send componentl */}
     </div>
   );
