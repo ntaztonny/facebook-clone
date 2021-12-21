@@ -7,6 +7,18 @@
   align-items: center;
 }
 
+.feed > hr {
+  margin-top: 50px;
+  width: 100%;
+  opacity: 0.2;
+}
+.feed > p {
+  place-items: center;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.3;
+}
 .feed__storyreel {
   overflow-x: hidden !important;
 }

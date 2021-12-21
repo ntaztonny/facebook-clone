@@ -37,7 +37,8 @@ function Feed() {
         username="Tonny Ntambaazi"
         image=""
       />
-      {/**Message send componentl */}
+      <hr />
+      <p>End of posts</p>
     </div>
   );
 }
